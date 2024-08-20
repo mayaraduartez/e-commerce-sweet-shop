@@ -1,4 +1,4 @@
-
+//cart
  document.addEventListener("DOMContentLoaded", function () {
     const addToCartBtns = document.querySelectorAll(".btn-add-to-cart");
   
@@ -30,22 +30,15 @@
       let quantity = parseInt(inputElement.value);
   
       quantity += change;
-  
       if (quantity < 1) {
-        quantity = 0;
-        btn.parentElement.style.display = "none"; // Esconder a div se a quantidade for 0
+        quantity = 1;
+      }if (quantity < 1) {
+        quantity = 1;
       }
-  
       inputElement.value = quantity;
     }
   });
   
-  
-
-  function scrollToDonutCards() {
-    const donutCardsSection = document.querySelector(".donut-cards");
-    donutCardsSection.scrollIntoView({ behavior: "smooth" });
-  }
 
   document.addEventListener("DOMContentLoaded", function () {
     const cardapioLink = document.querySelector(".ul");
@@ -55,8 +48,9 @@
     });
   });
 
+  //// Selecionar o elemento do rodapé
   function scrollToFooter() {
-    const footerSection = document.querySelector('footer'); // Selecionar o elemento do rodapé
+    const footerSection = document.querySelector('footer'); 
     footerSection.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -68,6 +62,7 @@
     });
   });
 
+  //criar donut
   const coberturaCheckboxes = document.querySelectorAll('input[name="cobertura"]');
   const recheioCheckboxes = document.querySelectorAll('input[name="recheio"]');
   const quantityInput = document.querySelector('.quantity');
@@ -83,6 +78,7 @@
 
   quantityInput.addEventListener('input', updateTotalPrice);
 
+  
   function updateTotalPrice() {
     let price = 5; // Base price for 1 cobertura and 1 recheio
 
@@ -102,3 +98,46 @@
     // Update total price display
     totalPriceSpan.textContent = price.toFixed(2);
   }
+
+  //cart
+  window.addEventListener('scroll', function () {
+  const cartSidebar = document.querySelector('.cart-sidebar');
+  const cardapioDiv = document.querySelector('.cardapio');
+  const cardapioRect = cardapioDiv.getBoundingClientRect();
+  
+  if (cardapioRect.top > 0) {
+    cartSidebar.style.top = `${cardapioRect.top}px`;
+  } else if (cardapioRect.bottom < window.innerHeight) {
+    cartSidebar.style.top = `${cardapioRect.bottom - cartSidebar.offsetHeight}px`;
+  } else {
+    cartSidebar.style.top = `0px`;
+  }
+});
+
+//rolar p cart
+function scrollToCart() {
+  const footerSection = document.querySelector('.cart-sidebar'); 
+  footerSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const phoneIcon = document.querySelector('.icon-carrinho');
+  phoneIcon.addEventListener('click', (event) => {
+    event.preventDefault();
+    scrollToFooter();
+  });
+});
+
+//rolar p cardapio
+function scrollToDonutCards() {
+  const footerSection = document.querySelector('.cardapio'); 
+  footerSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const phoneIcon = document.querySelector('');
+  phoneIcon.addEventListener('click', (event) => {
+    event.preventDefault();
+    scrollToFooter();
+  });
+});

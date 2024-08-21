@@ -137,8 +137,6 @@ nav ul {
 
 .menu-title {
   font-family: "Edu VIC WA NT Beginner", cursive;
-
-
 }
 
 nav li {
@@ -272,6 +270,7 @@ input:checked+label .action span.option-2 {
 .donut-quantity {
   display: flex;
   align-items: center;
+  width: 140%;
 }
 
 .btn-quantity {
@@ -279,18 +278,30 @@ input:checked+label .action span.option-2 {
   height: 25px;
   border: none;
   border-radius: 50%;
-  background-color: #ff99cc;
-  color: #fff;
+  background-color: transparent;
+  color: #d4d4d4;
   font-size: 16px;
   cursor: pointer;
 }
 
 .quantity {
-  width: 40px;
   height: 25px;
   text-align: center;
-  border: 0px solid #ff99cc;
+  border: 0px solid;
   border-radius: 5px;
+  display: flex;
+  width: 20px;
+  
+}
+
+.quantity-controls {
+  height: 25px;
+  width: 30%;
+  text-align: center;
+  border: 0px solid;
+  border-radius: 5px;
+  display: flex;
+  
 }
 
 .btn-add-to-cart {
@@ -381,7 +392,7 @@ input:checked+label .action span.option-2 {
   font-size: 20px;
 }
 
-.donut-card p {
+.p-description {
   margin-top: 10px;
   font-size: 16px;
   color: #555;
@@ -726,10 +737,11 @@ footer>div {
 }
 
 .cardapio-principal{
-  width: 80vw;
+  width: 100vw;
 }
 
 .cart-sidebar{
+  display: none;
   width: 20vw;
   position: sticky;
   background-color: #fff;
@@ -738,9 +750,8 @@ footer>div {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto; 
   height: 100vh;
-  display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .cart-footer{
@@ -752,7 +763,7 @@ footer>div {
 .button-cart {
   width: 180px;
   height: 40px;
-  background-image: linear-gradient(#e15c7c, #f38aa5);
+  background-color: #c23350;
   border: none;
   border-radius: 50px;
   color: rgb(255, 255, 255);
@@ -760,11 +771,8 @@ footer>div {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  cursor: pointer;
-  box-shadow: 1px 3px 0px #c23350;
   font-size: 12px;
-  transition-duration: .3s;
+ 
 }
 
 .cartIcon {
@@ -785,9 +793,8 @@ footer>div {
 .cart-items{
   display: flex;
   flex-direction: row;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .img-item{
@@ -796,6 +803,107 @@ footer>div {
  
 }
 
+.menu-title-cart{
+  display:flex;
+  justify-content: flex-start;
 
+}
 
+.title {
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
+.button-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.info-title{
+  font-size: 13px;
+}
+
+.info-title-preco{
+  font-size: 13px;
+}
+
+.donut-quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-item{
+  width: 100px;
+}
+
+.quantity input{
+  width: 10px;
+}
+
+.btn-quantity-create{
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff99cc;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-create {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    border: 0px solid #ff99cc;
+    border-radius: 5px;
+}
+
+.bag{
+  display: flex;
+  justify-content: end;
+  background-color: #f5a8a8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.bag-div{
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+  position: sticky;
+
+}
+
+.handbag{
+  height: 20px;
+}
+
+.empty-cart-message {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+}
+
+.info-description {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.added-message{
+  display: none;
+  font-size: 13px;
+  color:#cc7f91
+}
+
+.price{
+  color: #c23350;
+}

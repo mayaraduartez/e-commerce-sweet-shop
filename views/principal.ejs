@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DoceDonuts</title>
   <link rel="stylesheet" href="css/style.css" />
-  
+
 </head>
 
 <body>
@@ -16,7 +16,8 @@
       <h1>DONUTS</h1>
     </div>
     <div class="menu">
-      <a href="" class="ul" onclick="scrollToDonutCards()">Cardápio</a>
+      <a href="" class="ul" id="scroll-to-cardapio">Cardápio</a>
+      <a href="" class="ul" id="scroll-to-create-donut">Criar Donut</a>
       <a href="">
         <img class="icon-phone" onclick="scrollToFooter()" src="img/phone-call.png" />
       </a>
@@ -59,155 +60,170 @@
         <img class="donut" src="img/donut.png" />
       </div>
       <div class="lado-3">
-<div class="parent">
-<div class="child child-1">
-  <button class="button btn-1">
-    <svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z"></path>
-    </svg>
-</button>
-</div>
-<div class="child child-2">
-  <button class="button btn-2">
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#ff00ff"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></button>
-</div>
-<div class="child child-3">
-  <button class="button ">
-    <svg width="30" height="30" class="whatsapp" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="whatsapp">
-      <path d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"></path>
-    </svg></button>
-</div>
-<div class="child child-4">
-  <button class="button btn-4">
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" fill="#4267B2"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></button>
-</div>
-</div>
+        <div class="parent">
+          <div class="child child-1">
+            <button class="button btn-1">
+              <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z">
+                </path>
+              </svg>
+            </button>
+          </div>
+          <div class="child child-2">
+            <button class="button btn-2">
+              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#ff00ff">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg></button>
+          </div>
+          <div class="child child-3">
+            <button class="button ">
+              <svg width="30" height="30" class="whatsapp" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                class="whatsapp">
+                <path
+                  d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z">
+                </path>
+              </svg></button>
+          </div>
+          <div class="child child-4">
+            <button class="button btn-4">
+              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" fill="#4267B2">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg></button>
+          </div>
+        </div>
 
 
       </div>
     </div>
     <div class="cardapio">
       <div class="cart-sidebar">
-        <h1 class="menu-title">Meu carrinho</h1>
-
+        <div class="menu-title-cart">
+          <h1 class="title">Meu carrinho</h1>
+        </div>
+        <div class="empty-cart-message" style="display: block;">
+          <p>Seu carrinho está vazio.</p>
+        </div>
         <div class="items-list">
-        <div class="cart-items">
-          <div>
-          <img class="img-item" src="img/donut1.png" />
-          </div>
-          <div class="info-item">
-            <h4>Donut 1</h4>
-            <h4>R$: 10,00</h4>
-            <div class="donut-quantity" >
-              <button class="btn-quantity btn-decrement">-</button>
-              <input type="text" class="quantity" value="1" readonly />
-              <button class="btn-quantity btn-increment">+</button>
-            </div>
-          </div>
+          
+          
         </div>
-        </div>
+        <div>
         <div class="cart-footer">
           <h4>Total:</h4>
           <h4>R$ 0,00</h4>
         </div>
+        <div class="button-footer">
         <button class="button-cart">
           Finalizar Compra
-          <svg class="cartIcon" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
-         </button>
+        </button>
+        </div>
+      </div>
       </div>
 
       <div class="cardapio-principal">
-      <div class="donut-menu">
-        <h2 class="menu-title">CARDÁPIO</h2>
-      </div>
-      <div class="donut-cards">
-        
-        <div class="donut-card" data-id="1">
-          <div class="img-menu" style="display:flex; justify-content: center;">
-            <img src="img/donut1.png" alt="Donut 1" />
+        <div class="bag-div" >
+          <button class="bag" onclick="toggleCartSidebar()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="handbag" fill="currentColor" class="bi bi-handbag" viewBox="0 0 16 16">
+            <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"/>
+          </svg>
+        </button>
+        </div>
+        <div class="donut-menu">
+          <h2 class="menu-title">CARDÁPIO</h2>
+        </div>
+        <div class="donut-cards">
+
+          <div class="donut-card" data-id="1">
+            <div class="img-menu" style="display:flex; justify-content: center;">
+              <img src="img/donut1.png" alt="Donut 1" />
+            </div>
+            <div class="favorite">
+              <input style="display: none;" type="checkbox" id="favorite-1" name="favorite-checkbox" value="1" />
+              <label for="favorite-1" class="container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-heart">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </label>
+            </div>
+            <h3>Donut 1</h3>
+            <p class="p-description">Descrição do donut saboroso 1.</p>
+            <h3 class="price" >R$: 5,00</h3>
+            <div class="div">
+              <button class="btn-add-to-cart" data-name="Donut 1" data-id="1" data-description="Descrição do donut saboroso 1." data-price="5.00" data-img="img/donut1.png">
+                <img class="icon-phone" src="img/compras.png" />
+              </button>
+              <p class="added-message">Item adicionado ao carrinho</p>
+            </div>
           </div>
-          <div class="favorite">
-            <input style="display: none;" type="checkbox" id="favorite-1" name="favorite-checkbox" value="1" />
-            <label for="favorite-1" class="container">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-heart">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                </path>
-              </svg>
-            </label>
-          </div>
-          <h3>Donut 1</h3>
-          <p>Descrição do donut saboroso 1.</p>
-          <h3 style="color: #cc7f91">R$: 5,00</h3>
-          <div class="div">
-            <button class="btn-add-to-cart">
-              <img class="icon-phone" src="img/compras.png" />
-            </button>
+          
+          <div class="donut-card" data-id="2">
+            <div class="img-menu" style="display:flex; justify-content: center;">
+              <img src="img/donut2.png" alt="Donut 2" />
+            </div>
+            <div class="favorite">
+              <input style="display: none;" type="checkbox" id="favorite-2" name="favorite-checkbox" value="2" />
+              <label for="favorite-2" class="container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-heart">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </label>
+            </div>
+            <h3>Donut 2</h3>
+            <p class="p-description">Descrição do donut saboroso 2.</p>
+            <h3 class="price">R$: 5,00</h3>
+            <div class="div">
+              <button class="btn-add-to-cart" data-name="Donut 2" data-id="2" data-description="Descrição do donut saboroso 2." data-price="5.00" data-img="img/donut2.png">
+                <img class="icon-phone" src="img/compras.png" />
+              </button>
+              <p class="added-message">Item adicionado ao carrinho</p>
+            </div>
           </div>
         </div>
-        
-        <div class="donut-card" data-donut-id="2">
-          <div class="img-menu" style="display:flex; justify-content: center;">
-            <img src="img/donut2.png" alt="Donut 2" />
+        <div class="form">
+          <div class="form-donut">
+            <form method="post" action="/pedido">
+              <h3>Seu Donut Perfeito</h3>
+              <h3>Cobertura</h3>
+              <div class="sabores">
+                <input type="checkbox" name="cobertura" value="Baunilha">Baunilha</input>
+                <input type="checkbox" name="cobertura" value="Chocolate">Chocolate</input>
+                <input type="checkbox" name="cobertura" value="Morango">Morango</input>
+                <input type="checkbox" name="cobertura" value="Caramelo">Caramelo</input>
+              </div>
+              <h3>Recheio</h3>
+              <div>
+                <input type="checkbox" name="recheio" value="Brigadeiro">Brigadeiro</input>
+                <input type="checkbox" name="recheio" value="Beijinho">Beijinho</input>
+                <input type="checkbox" name="recheio" value="Doce de leite">Doce de leite</input>
+                <input type="checkbox" name="recheio" value="Nutella">Nutella</input>
+              </div>
+              <h3>Quantidade</h3>
+              <div>
+                <button class="btn-quantity-create btn-decrement">-</button>
+                <input type="text" class="quantity-create" value="1" readonly />
+                <button class="btn-quantity-create btn-increment">+</button>
+              </div>
+              <h3>Total: R$ <span id="totalPrice" style="color: #cc7f91">00,00</span></h3>
+              <button class="btn " style="border: none;">Adicionar no carrinho</button>
+            </form>
           </div>
-          <div class="favorite">
-            <input style="display: none;" type="checkbox" id="favorite2" name="favorite-checkbox" value="favorite-button" />
-            <label for="favorite2" class="favorite-label">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-heart">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                </path>
-              </svg>
-            </label>
-          </div>
-          <h3>Donut 2</h3>
-          <p>Descrição do donut saboroso 2.</p>
-          <h3 style="color: #cc7f91">R$: 5,00</h3>
-          <div class="div">
-            <button class="btn-add-to-cart" id="btnAddToCart">
-              <img class="icon-phone" src="img/compras.png" />
-            </button>
-          </div>
+          </section>
         </div>
-        
-  
       </div>
-      <div class="form">
-        <div class="form-donut">
-          <form method="post" action="/pedido">
-            <h3>Seu Donut Perfeito</h3>
-            <h3>Cobertura</h3>
-            <div class="sabores">
-              <input type="checkbox" name="cobertura" value="Baunilha">Baunilha</input>
-              <input type="checkbox" name="cobertura" value="Chocolate">Chocolate</input>
-              <input type="checkbox" name="cobertura" value="Morango">Morango</input>
-              <input type="checkbox" name="cobertura" value="Caramelo">Caramelo</input>
-            </div>
-            <h3>Recheio</h3>
-            <div>
-              <input type="checkbox" name="recheio" value="Brigadeiro">Brigadeiro</input>
-              <input type="checkbox" name="recheio" value="Beijinho">Beijinho</input>
-              <input type="checkbox" name="recheio" value="Doce de leite">Doce de leite</input>
-              <input type="checkbox" name="recheio" value="Nutella">Nutella</input>
-            </div>
-            <h3>Quantidade</h3>
-            <div>
-              <button class="btn-quantity btn-decrement">-</button>
-              <input type="text" class="quantity" value="1" readonly />
-              <button class="btn-quantity btn-increment">+</button>
-            </div>
-            <h3>Total: R$ <span id="totalPrice" style="color: #cc7f91">00,00</span></h3>
-            <button class="btn " style="border: none;">Adicionar no carrinho</button>
-          </form>
-        </div>
-        </section>
-      </div>
-      </div>
-    
+
     </div>
   </div>
 
@@ -221,7 +237,7 @@
 
       <div class="social-buttons">
         <a href="#" class="social-button instagram">
-          <svg   viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1">
               <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)">
@@ -236,30 +252,36 @@
             </g>
           </svg>
         </a>
-          <!-- WhatsApp Button -->
-          <a href="#" class="social-button whatsapp-footer">
-            <svg   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path  d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"></path>
-            </svg>
-          </a>
-          
-          <a href="#" class="social-button facebook">
-            <svg viewBox="0 0 384 512" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path  d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path>
-            </svg>
-          </a>
-      
-          <a href="#" class="social-button x">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z"></path>
-            </svg>
-          </a>
-        
-        
-                
-      
-  </div>
+        <!-- WhatsApp Button -->
+        <a href="#" class="social-button whatsapp-footer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z">
+            </path>
+          </svg>
+        </a>
+
+        <a href="#" class="social-button facebook">
+          <svg viewBox="0 0 384 512" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z">
+            </path>
+          </svg>
+        </a>
+
+        <a href="#" class="social-button x">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z">
+            </path>
+          </svg>
+        </a>
+
+
+
+
       </div>
+    </div>
     </div>
     <div class="icons-footer">
       <p>Autor:</p>
@@ -268,6 +290,8 @@
   </footer>
 
   <script src="/js/main.js"></script>
+  <script src="/js/cart-fixed.js"></script>
+
 </body>
 
 </html>

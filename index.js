@@ -6,6 +6,7 @@ var session = require("express-session");
 var passport = require("passport"); 
 var moment = require("moment"); 
 app.locals.moment = moment;
+import express  from "express";
 
 const principalRoute = require("./router/principalRoute");
 

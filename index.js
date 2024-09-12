@@ -11,6 +11,8 @@ const principalRoute = require("./router/principalRoute");
 
 app.set("view engine", "ejs");
 
+require('dotenv').config()
+
 
 app.use(express.urlencoded({ extended: false }));
 

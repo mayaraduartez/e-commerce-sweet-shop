@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartSidebar = document.querySelector('.cart-sidebar');
   const cartToSidebar = document.querySelector('.cart-sidebar .items-list');
   const emptyCartMessage = document.querySelector('.empty-cart-message');
-  const totalDisplay = document.querySelector('.cart-footer h4:last-child');
   
   // Função para verificar se o carrinho está vazio
   function updateEmptyCartMessage() {
@@ -15,19 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Função para atualizar o total
-  function updateTotal() {
-    let total = 0;
-    const cartItems = cartToSidebar.querySelectorAll('.cart-items');
-    
-    cartItems.forEach(item => {
-      const price = parseFloat(item.getAttribute('data-price'));
-      const quantity = parseInt(item.querySelector('.quantity').value, 10);
-      total += price * quantity;
-    });
-    
-    totalDisplay.textContent = `R$ ${total.toFixed(2)}`;
-  }
 
   // Função para incrementar a quantidade
   function incrementQuantity(cartItem) {
@@ -54,9 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         quantityInput.value = quantity;
       }
-
-      updateTotal();
       updateEmptyCartMessage();
+      updateTotal();
     }
   }
 
@@ -141,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+//rola para footer
 function scrollToFooter() {
   const footerSection = document.querySelector('footer');
   footerSection.scrollIntoView({ behavior: 'smooth' });
@@ -155,19 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
- //// Selecionar o elemento do rodapé
- function scrollToFooter() {
-  const footerSection = document.querySelector('footer'); 
-  footerSection.scrollIntoView({ behavior: 'smooth' });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const phoneIcon = document.querySelector('.icon-phone');
-  phoneIcon.addEventListener('click', (event) => {
-    event.preventDefault();
-    scrollToFooter();
-  });
-});
 
 //rolar para a bag
 function scrollToCart() {
@@ -192,17 +164,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const scrollLink = document.getElementById('scroll-to-cardapio');
+  const scrollLinks = document.querySelectorAll('.scroll-to-cardapio');
   const cardapioDiv = document.querySelector('.cardapio');
 
-  // Função para rolar até a div cardapio
   function scrollToCardapio(event) {
-    event.preventDefault(); // Impede o comportamento padrão do link
+    event.preventDefault(); 
     cardapioDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Adiciona o evento de clique ao link
-  scrollLink.addEventListener('click', scrollToCardapio);
+
+  scrollLinks.forEach(function (link) {
+    link.addEventListener('click', scrollToCardapio);
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -218,3 +191,39 @@ document.addEventListener('DOMContentLoaded', function () {
   // Adiciona o evento de clique ao link
   scrollLink.addEventListener('click', scrollToCardapio);
 });
+
+
+//filtro do menu
+document.addEventListener('DOMContentLoaded', function() {
+  const menuItems = document.querySelectorAll('.menu-options li');
+  const cards = document.querySelectorAll('.donut-card');
+
+  menuItems.forEach(function(menuItem) {
+    menuItem.addEventListener('click', function() {
+      const selectedCategory = this.getAttribute('data-category');
+
+ 
+      menuItems.forEach(function(item) {
+        item.classList.remove('active');
+      });
+
+
+      this.classList.add('active');
+
+
+      cards.forEach(function(card) {
+        if (selectedCategory === 'all' || card.classList.contains(selectedCategory)) {
+          card.classList.remove('hidden'); 
+        } else {
+          card.classList.add('hidden'); 
+        }
+      });
+    });
+  });
+});
+
+//img perfil
+function loadFile(event) {
+  const image = document.getElementById('profileImage');
+  image.src = URL.createObjectURL(event.target.files[0]);
+}

@@ -142,6 +142,10 @@ nav ul {
   text-align: center;
 }
 
+.info{
+  text-align:left;
+}
+
 nav li {
   margin-right: 2%;
 }
@@ -238,6 +242,7 @@ input:checked+label .action span.option-2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
 .donut-quantity {
@@ -281,6 +286,37 @@ input:checked+label .action span.option-2 {
   padding: 5px;
   margin-left: 8px;
   background-color: #e15c7c ;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.edit-item {
+  padding: 5px;
+  margin: 8px;
+  background-color: #59ec8a ;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 15px; 
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.delete-item {
+  padding: 5px;
+  margin: 8px;
+  background-color: #ec5959 ;
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -334,13 +370,23 @@ input:checked+label .action span.option-2 {
   background-color: #fff9fa;
   flex: 1 1 180px;
   max-width: 180px;
-  margin: 2%;
-  padding: 20px;
+  margin: 15px;
+  padding: 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 7%;
   text-align: center;
   display: block; 
   flex-direction: column;
+  position: relative;
+}
+
+.cart-section {
+  position: absolute;
+  bottom: 10px;  
+  left: 5px;   
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
 }
 
 .donut-card.hidden {
@@ -466,11 +512,15 @@ header {
   padding: 20px;
 }
 
-.sabores {
+.sabores, .recheios {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px; 
+}
+
+.recheios input {
+  margin-right: 10px;
 }
 
 .sabores input {
@@ -488,6 +538,10 @@ header {
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.form-itens{
+  gap:10px;
 }
 
 .btn-form:hover {
@@ -518,6 +572,16 @@ header {
   font-size: 18px;
   border-radius: 5px;
 }
+.form-donut input[type="number"] {
+  width: 80px;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
 
 @media (max-width: 768px) {
   .form-donut {
@@ -813,6 +877,7 @@ footer > div {
   height: 100vh;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 1000;
 }
 
 .menu-title-cart{
@@ -999,6 +1064,7 @@ footer > div {
   justify-content: center;
   color: #ffff;
   cursor: pointer;
+  
 }
 
 .bag:hover{
@@ -1010,6 +1076,7 @@ footer > div {
   justify-content: end;
   padding: 20px;
   position: sticky;
+  z-index: 1000;
 
 }
 
@@ -1020,7 +1087,7 @@ footer > div {
 .added-message{
   display: none;
   font-size: 13px;
-  color:#cc7f91
+  color:#cc7f91;
 }
 
 .price{
@@ -1173,6 +1240,14 @@ a {
   padding: 30px;
 }
 
+.dados{
+  width: 50vw;
+  min-height: 70vh;
+  background-color: #ffff;
+  border-radius: 10px;
+  padding: 30px;
+}
+
 .form-dados {
   display: flex;
   flex-direction: column;
@@ -1192,6 +1267,13 @@ a {
   flex: 1 1 48%;
   display: flex;
   flex-direction: column;
+}
+
+.row {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .column.small {
@@ -1334,7 +1416,6 @@ h2 {
   justify-content: center;
 }
 
-
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -1368,7 +1449,7 @@ h2 {
   margin: 5px 0; 
 }
 
-.card-info p:last-child {
+.card-info .dest {
   font-weight: bold; 
   color: #007bff; 
 }
@@ -1383,4 +1464,168 @@ h2 {
   .card-pedidos {
     max-width: 100%; 
   }
+}
+
+.filtros {
+  padding-bottom: 30px;
+}
+
+.status-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.status-select {
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  width: 220px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M5%207l5%205%205-5H5z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+.status-select:hover, .status-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.status-select:focus {
+  outline: none;
+}
+
+.status-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.status-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-btn:active {
+  background-color: #00408d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.create-menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dados .form-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.dados .form-dados label,
+.dados .form-dados input,
+.dados .form-dados select {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dados .form-dados div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dados .form-dados label {
+  min-width: 80px; 
+}
+
+.image-preview {
+  margin-top: 15px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+input[name="valor"] {
+  width: 100px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  text-align: right;
+}
+
+.btn-edit {
+  background-color: #A1C6EA; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+}
+
+.btn-edit:hover {
+  background-color: #82AECB; 
+}
+
+
+.btn-delete {
+  margin-left: 10px;
+  padding: 3px 8px;
+  border-radius: 10px ;
+  background-color: #ec5959;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+.btn-add {
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.btn-add:hover {
+  background-color: #45a049;
 }

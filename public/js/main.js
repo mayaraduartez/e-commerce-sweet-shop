@@ -140,28 +140,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
 //rolar para a bag
 function scrollToCart() {
   const footerSection = document.querySelector('.bag'); 
   footerSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const phoneIcon = document.querySelector('.icon-carrinho');
-  phoneIcon.addEventListener('click', (event) => {
-    event.preventDefault();
-    scrollToFooter();
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const phoneIcon = document.querySelector('.icon-carrinho');
-  phoneIcon.addEventListener('click', (event) => {
-    event.preventDefault();
-    scrollToFooter();
-  });
-});
+// Função para redirecionar caso a div não seja encontrada
+function redirectToHome() {
+  window.location.href = '/principaluser';
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   const scrollLinks = document.querySelectorAll('.scroll-to-cardapio');
@@ -169,9 +157,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function scrollToCardapio(event) {
     event.preventDefault(); 
-    cardapioDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
 
+    if (cardapioDiv) {
+      cardapioDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      redirectToHome(); 
+    }
+  }
 
   scrollLinks.forEach(function (link) {
     link.addEventListener('click', scrollToCardapio);
@@ -182,15 +174,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const scrollLink = document.getElementById('scroll-to-create-donut');
   const cardapioDiv = document.querySelector('.form');
 
-  // Função para rolar até a div cardapio
+  // Função para rolar até a div form
   function scrollToCardapio(event) {
-    event.preventDefault(); // Impede o comportamento padrão do link
-    cardapioDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    event.preventDefault(); 
+
+    if (cardapioDiv) {
+      cardapioDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      redirectToHome(); 
+    }
   }
 
-  // Adiciona o evento de clique ao link
-  scrollLink.addEventListener('click', scrollToCardapio);
+  if (scrollLink) {
+    scrollLink.addEventListener('click', scrollToCardapio);
+  }
 });
+
 
 
 //filtro do menu

@@ -42,6 +42,10 @@ async function cadastro(req,res){
     res.render("login/cadastro.ejs");
 }
 
+async function principaluser(req,res){
+    res.render("users/principal.ejs");
+}
+
 module.exports = {
     principal,
     favoritos,
@@ -52,5 +56,6 @@ module.exports = {
     pedidos,
     perfiladm,
     login,
-    cadastro
+    cadastro,
+    principaluser
 }

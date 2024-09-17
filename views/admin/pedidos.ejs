@@ -1,0 +1,108 @@
+<%- include('./cabecalho.ejs') %>
+<div class="principal pedidos">
+  <h2 class="menu-title">Pedidos</h2>
+
+  <div class="filtros">
+    <ul class="menu-options">
+      <li class="active" data-category="all">Todos</li>
+      <li data-category="em-processamento">Em processamentos</li>
+      <li data-category="enviado">Enviados</li>
+      <li data-category="entregue">Entregues</li>
+      <li data-category="cancelado">Cancelados</li>
+    </ul>
+  </div>
+
+  <div class="cards-container" id="orders-list">
+    <div class="card-pedidos" data-status="entregue" data-date="2024-09-01">
+      <div class="card-info">
+        <h3>Data: 2024-09-01</h3>
+        <p>Donut de Morango (x2), Donut de Chocolate (x1)</p>
+        <p>Total: R$ 20,00</p>
+        <p class="dest">Status: Entregue</p>
+        <p>Modo de pagamento: Cartão</p>
+        <p class="dest">
+          Endereço de entrega: Rua Flores, 123, Centro, São Paulo-SP
+        </p>
+        <label for="update-status" class="status-label">Status</label>
+        <select id="status-1" class="status-select">
+          <option value="Em processamento">Em processamento</option>
+          <option value="Enviado">Enviado</option>
+          <option value="Entregue">Entregue</option>
+          <option value="Cancelado">Cancelado</option>
+        </select>
+        <button class="status-btn" onclick="updateStatus(1)">Atualizar</button>
+      </div>
+    </div>
+    <div
+      class="card-pedidos"
+      data-status="em-processamento"
+      data-date="2024-09-02"
+    >
+      <div class="card-info">
+        <h3>Data: 2024-09-02</h3>
+        <p>Donut de Churros (x3), Donut de Morango (x2)</p>
+        <p>Total: R$ 35,00</p>
+        <p class="dest">Status: Em processamento</p>
+        <p>Modo de pagamento: Cartão</p>
+        <p class="dest">
+          Endereço de entrega: Avenida Paulista, 456, Centro, São Paulo-SP
+        </p>
+        <label for="update-status" class="status-label">Status</label>
+        <select id="status-2" class="status-select">
+          <option value="Em processamento">Em processamento</option>
+          <option value="Enviado">Enviado</option>
+          <option value="Entregue">Entregue</option>
+          <option value="Cancelado">Cancelado</option>
+        </select>
+        <button class="status-btn" onclick="updateStatus(2)">Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuOptions = document.querySelectorAll(".menu-options li");
+    const ordersList = document.querySelectorAll(".card-pedidos");
+
+    menuOptions.forEach((option) => {
+      option.addEventListener("click", function () {
+        // Remove a classe 'active' de todas as opções
+        menuOptions.forEach((item) => item.classList.remove("active"));
+        // Adiciona a classe 'active' à opção clicada
+        this.classList.add("active");
+
+        const category = this.getAttribute("data-category");
+
+        // Filtrar os pedidos
+        ordersList.forEach((order) => {
+          const orderStatus = order.getAttribute("data-status").toLowerCase();
+
+          if (category === "all" || category === orderStatus) {
+            order.style.display = "block";
+          } else {
+            order.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+
+  function updateStatus(orderId) {
+    const newStatus = document.getElementById(`status-${orderId}`).value;
+    const orderCard = document.querySelector(
+      `.card-pedidos:nth-child(${orderId}) .dest`
+    );
+
+    if (newStatus) {
+      orderCard.textContent = `Status: ${newStatus}`;
+      document
+        .querySelector(`.card-pedidos:nth-child(${orderId})`)
+        .setAttribute("data-status", newStatus);
+    } else {
+      alert("Por favor, selecione um status válido.");
+    }
+  }
+</script>
+
+<%- include('./rodape.ejs') %>

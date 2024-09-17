@@ -12,6 +12,8 @@ router.get('/favoritos', principalController.favoritos);
 
 router.get('/meuspedidos', principalController.meuspedidos);
 
+router.get('/principaluser', principalController.principaluser);
+
 //adm
 router.get('/principaladm', principalController.principaladm);
 
@@ -24,6 +26,7 @@ router.get('/perfiladm', principalController.perfiladm);
 router.get('/login', principalController.login);
 
 router.get('/cadastro', principalController.cadastro);
+
 
 
 

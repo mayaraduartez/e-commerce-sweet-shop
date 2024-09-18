@@ -14,6 +14,11 @@ router.get('/meuspedidos', principalController.meuspedidos);
 
 router.get('/principaluser', principalController.principaluser);
 
+router.get('/carrinho', principalController.carrinho);
+
+
+
+
 //adm
 router.get('/principaladm', principalController.principaladm);
 

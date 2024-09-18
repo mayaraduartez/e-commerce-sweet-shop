@@ -46,6 +46,10 @@ async function principaluser(req,res){
     res.render("users/principal.ejs");
 }
 
+async function carrinho(req,res){
+    res.render("users/carrinho.ejs");
+}
+
 module.exports = {
     principal,
     favoritos,
@@ -57,5 +61,6 @@ module.exports = {
     perfiladm,
     login,
     cadastro,
-    principaluser
+    principaluser,
+    carrinho
 }

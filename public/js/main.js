@@ -226,3 +226,63 @@ function loadFile(event) {
   const image = document.getElementById('profileImage');
   image.src = URL.createObjectURL(event.target.files[0]);
 }
+
+//button cart
+
+  document.addEventListener('DOMContentLoaded', () => {
+      const finalizarCompraBtn = document.getElementById('finalizarCompra');
+      finalizarCompraBtn.addEventListener('click', (event) => {
+          const cartItems = document.querySelectorAll('.cart-items'); 
+          
+          if (cartItems.length === 0) {
+              event.preventDefault(); 
+              alert('Seu carrinho está vazio');
+          }
+      });
+  });
+
+  //pedidos
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuOptions = document.querySelectorAll(".menu-options li");
+    const ordersList = document.querySelectorAll(".card-pedidos");
+
+    menuOptions.forEach((option) => {
+      option.addEventListener("click", function () {
+        // Remove a classe 'active' de todas as opções
+        menuOptions.forEach((item) => item.classList.remove("active"));
+        // Adiciona a classe 'active' à opção clicada
+        this.classList.add("active");
+
+        const category = this.getAttribute("data-category");
+
+        // Filtrar os pedidos
+        ordersList.forEach((order) => {
+          const orderStatus = order.getAttribute("data-status").toLowerCase();
+
+          if (category === "all" || category === orderStatus) {
+            order.style.display = "block";
+          } else {
+            order.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+
+  function updateStatus(orderId) {
+    const newStatus = document.getElementById(`status-${orderId}`).value;
+    const orderCard = document.querySelector(
+      `.card-pedidos:nth-child(${orderId}) .dest`
+    );
+
+    if (newStatus) {
+      orderCard.textContent = `Status: ${newStatus}`;
+      document
+        .querySelector(`.card-pedidos:nth-child(${orderId})`)
+        .setAttribute("data-status", newStatus);
+    } else {
+      alert("Por favor, selecione um status válido.");
+    }
+  }
+
